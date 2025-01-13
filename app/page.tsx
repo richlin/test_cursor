@@ -20,7 +20,10 @@ export default function Home() {
       videoId: "BHiWygziyso",
       url: "https://www.youtube.com/watch?v=BHiWygziyso",
     },
-  ]
+  ].map(video => ({
+    ...video,
+    title: video.title.replace(/[']/g, "'")
+  }))
 
   const socialLinks = [
     {
@@ -50,8 +53,7 @@ export default function Home() {
       <main className="flex min-h-screen flex-col items-center justify-between">
         <HeroSection
           title="Mark Rober"
-          subtitle="Former NASA Engineer, YouTuber, and Founder of CrunchLabs"
-          description="Join me on my journey of making science and engineering fun through creative experiments and inventions. From NASA JPL to YouTube, I'm passionate about inspiring the next generation of innovators."
+          description="Join me on my journey of making science and engineering fun through creative experiments and inventions. From NASA JPL to YouTube, I am passionate about inspiring the next generation of innovators."
           badgeText="Featured on Discovery Channel & Jimmy Kimmel Live"
           badgeIcon="youtube"
           mockupContent={

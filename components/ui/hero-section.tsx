@@ -8,7 +8,6 @@ import { Icons } from './icons'
 
 interface HeroSectionProps {
   title: string
-  subtitle: string
   description: string
   badgeText?: string
   badgeIcon?: keyof typeof Icons
@@ -17,7 +16,6 @@ interface HeroSectionProps {
 
 export function HeroSection({
   title,
-  subtitle,
   description,
   badgeText,
   badgeIcon,
