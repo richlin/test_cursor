@@ -6,7 +6,7 @@ import { AuroraBackground } from '@/components/ui/aurora-background'
 export default function Home() {
   const featuredVideos = [
     {
-      title: "Building the World's Largest Elephant Toothpaste Experiment",
+      title: "Building the World&apos;s Largest Elephant Toothpaste Experiment",
       videoId: "XXn4fP3CnJg",
       url: "https://www.youtube.com/watch?v=XXn4fP3CnJg",
     },
@@ -16,7 +16,7 @@ export default function Home() {
       url: "https://www.youtube.com/watch?v=VrKW58MS12g",
     },
     {
-      title: "World's Largest Devil's Toothpaste Explosion",
+      title: "World&apos;s Largest Devil&apos;s Toothpaste Explosion",
       videoId: "BHiWygziyso",
       url: "https://www.youtube.com/watch?v=BHiWygziyso",
     },
@@ -53,7 +53,7 @@ export default function Home() {
       <main className="flex min-h-screen flex-col items-center justify-between">
         <HeroSection
           title="Mark Rober"
-          description="Join me on my journey of making science and engineering fun through creative experiments and inventions. From NASA JPL to YouTube, I am passionate about inspiring the next generation of innovators."
+          description="Join me on my journey of making science and engineering fun through creative experiments and inventions. From NASA JPL to YouTube, I&apos;m passionate about inspiring the next generation of innovators."
           badgeText="Featured on Discovery Channel & Jimmy Kimmel Live"
           badgeIcon="youtube"
           mockupContent={
