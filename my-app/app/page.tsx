@@ -1,10 +1,14 @@
-import Image from 'next/image';
-import Link from 'next/link';
+'use client'
+
+import * as React from 'react'
+import Image from 'next/image'
+import Link from 'next/link'
+import { HeroSection } from "@/components/blocks/hero-section"
 
 export default function Home() {
   const featuredVideos = [
     {
-      title: "World's Largest Jello Pool",
+      title: "World&apos;s Largest Jello Pool",
       url: "https://www.youtube.com/watch?v=DPZzrlFCD_I",
       videoId: "DPZzrlFCD_I",
     },
@@ -18,35 +22,23 @@ export default function Home() {
       url: "https://www.youtube.com/watch?v=My4RA5I0FKs",
       videoId: "My4RA5I0FKs",
     },
-  ];
+  ]
 
   const socialLinks = [
     { platform: 'Instagram', url: 'https://instagram.com/markrober', icon: 'instagram' },
     { platform: 'TikTok', url: 'https://tiktok.com/@markrober', icon: 'tiktok' },
     { platform: 'Twitter', url: 'https://twitter.com/MarkRober', icon: 'twitter' },
     { platform: 'Facebook', url: 'https://facebook.com/MarkRoberYouTube', icon: 'facebook' },
-  ];
+  ]
 
   return (
     <main className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center bg-gradient-to-r from-blue-600 to-purple-600 text-white">
-        <div className="container mx-auto px-6 text-center">
-          <h1 className="text-6xl font-bold mb-4">Mark Rober</h1>
-          <p className="text-2xl mb-8">Former NASA Engineer. Current CrunchLabs Founder. Friend of Science.</p>
-          <Link 
-            href="https://crunchlabs.com" 
-            className="bg-white text-blue-600 px-8 py-3 rounded-full font-bold hover:bg-opacity-90 transition"
-          >
-            Explore CrunchLabs
-          </Link>
-        </div>
-      </section>
-
-      {/* Featured Videos Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center mb-12">Popular Videos</h2>
+      <HeroSection
+        title="Mark Rober"
+        description="Former NASA Engineer. Current CrunchLabs Founder. Friend of Science."
+        badgeText="Featured on Discovery Channel & Jimmy Kimmel Live"
+        badgeIcon="youtube"
+        mockupContent={
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {featuredVideos.map((video, index) => (
               <Link 
@@ -72,8 +64,8 @@ export default function Home() {
               </Link>
             ))}
           </div>
-        </div>
-      </section>
+        }
+      />
 
       {/* Background Section */}
       <section className="py-20 bg-white">
@@ -85,7 +77,7 @@ export default function Home() {
               I spent 9 remarkable years at NASA JPL, with 7 of those years dedicated to the Curiosity Rover project.
             </p>
             <p>
-              My journey then led me to Apple's Special Projects Group, where I worked as a Mechanical Engineer 
+              My journey then led me to Apple&apos;s Special Projects Group, where I worked as a Mechanical Engineer 
               in Product Design for 5 years.
             </p>
             <p>
@@ -208,5 +200,5 @@ export default function Home() {
         </div>
       </footer>
     </main>
-  );
+  )
 }

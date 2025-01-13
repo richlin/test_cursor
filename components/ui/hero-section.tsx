@@ -1,16 +1,18 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { Badge } from './badge'
-import { Glow } from './glow'
-import { Mockup } from './mockup'
-import { Icons } from './icons'
+import * as React from 'react'
+import { Badge } from "@/components/ui/badge"
+import { ArrowRightIcon } from "lucide-react"
+import { Mockup, MockupFrame } from "@/components/ui/mockup"
+import { Glow } from "@/components/ui/glow"
+import Image from "next/image"
+import { useTheme } from "next-themes"
 
 interface HeroSectionProps {
   title: string
   description: string
   badgeText?: string
-  badgeIcon?: keyof typeof Icons
+  badgeIcon?: string
   mockupContent?: React.ReactNode
 }
 
@@ -21,58 +23,32 @@ export function HeroSection({
   badgeIcon,
   mockupContent,
 }: HeroSectionProps) {
-  const BadgeIcon = badgeIcon ? Icons[badgeIcon] : null
+  const { theme } = useTheme()
 
   return (
-    <section className="relative">
-      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-xl text-center">
+    <section className="w-full py-12 md:py-24 lg:py-32">
+      <div className="container px-4 md:px-6">
+        <div className="flex flex-col items-center space-y-4 text-center">
           {badgeText && (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              <Badge
-                variant="secondary"
-                className="mb-4 rounded-lg px-4 py-1.5 text-sm font-medium"
-              >
-                {BadgeIcon && <BadgeIcon className="mr-2 h-4 w-4" />}
-                {badgeText}
-              </Badge>
-            </motion.div>
+            <Badge className="h-9 items-center rounded-lg px-4 py-2">
+              {badgeIcon && <ArrowRightIcon className="mr-2 h-4 w-4" />}
+              {badgeText}
+            </Badge>
           )}
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-4xl font-bold tracking-tight sm:text-5xl"
-          >
+          <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none">
             {title}
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="mt-4 text-base leading-7 text-muted-foreground sm:text-lg"
-          >
+          </h1>
+          <p className="mx-auto max-w-[700px] text-gray-500 dark:text-gray-400 md:text-xl">
             {description}
-          </motion.p>
+          </p>
         </div>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="mt-12 flow-root sm:mt-16"
-        >
-          <Glow>
-            <Mockup className="p-4 lg:p-6">
-              <div className="relative rounded-xl bg-background p-4">
-                {mockupContent}
-              </div>
-            </Mockup>
-          </Glow>
-        </motion.div>
+        {mockupContent && (
+          <div className="mx-auto mt-16 max-w-5xl sm:mt-20">
+            <Glow>
+              <MockupFrame>{mockupContent}</MockupFrame>
+            </Glow>
+          </div>
+        )}
       </div>
     </section>
   )
