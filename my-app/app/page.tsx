@@ -8,7 +8,7 @@ import { HeroSection } from "@/components/blocks/hero-section"
 export default function Home() {
   const featuredVideos = [
     {
-      title: "World&apos;s Largest Jello Pool",
+      title: "World's Largest Jello Pool",
       url: "https://www.youtube.com/watch?v=DPZzrlFCD_I",
       videoId: "DPZzrlFCD_I",
     },
