@@ -1,3 +1,6 @@
+'use client'
+
+import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { HeroSection } from '@/components/ui/hero-section'
@@ -6,7 +9,7 @@ import { AuroraBackground } from '@/components/ui/aurora-background'
 export default function Home() {
   const featuredVideos = [
     {
-      title: "Building the World&apos;s Largest Elephant Toothpaste Experiment",
+      title: "Building the World\u2019s Largest Elephant Toothpaste Experiment",
       videoId: "XXn4fP3CnJg",
       url: "https://www.youtube.com/watch?v=XXn4fP3CnJg",
     },
@@ -16,7 +19,7 @@ export default function Home() {
       url: "https://www.youtube.com/watch?v=VrKW58MS12g",
     },
     {
-      title: "World&apos;s Largest Devil&apos;s Toothpaste Explosion",
+      title: "World\u2019s Largest Devil\u2019s Toothpaste Explosion",
       videoId: "BHiWygziyso",
       url: "https://www.youtube.com/watch?v=BHiWygziyso",
     },
@@ -53,7 +56,7 @@ export default function Home() {
       <main className="flex min-h-screen flex-col items-center justify-between">
         <HeroSection
           title="Mark Rober"
-          description="Join me on my journey of making science and engineering fun through creative experiments and inventions. From NASA JPL to YouTube, I&apos;m passionate about inspiring the next generation of innovators."
+          description="Join me on my journey of making science and engineering fun through creative experiments and inventions. From NASA JPL to YouTube, I\u2019m passionate about inspiring the next generation of innovators."
           badgeText="Featured on Discovery Channel & Jimmy Kimmel Live"
           badgeIcon="youtube"
           mockupContent={
@@ -91,13 +94,13 @@ export default function Home() {
                 <h3 className="mb-4 text-xl font-semibold">Education</h3>
                 <ul className="space-y-2">
                   <li>• Mechanical Engineering at BYU</li>
-                  <li>• Master's from USC</li>
+                  <li>• Master\u2019s from USC</li>
                 </ul>
               </div>
               <div className="rounded-lg bg-white/80 p-6 shadow-lg dark:bg-gray-800/80 backdrop-blur-sm">
                 <h3 className="mb-4 text-xl font-semibold">Career Highlights</h3>
                 <ul className="space-y-2">
-                  <li>• 9 years at NASA's Jet Propulsion Laboratory</li>
+                  <li>• 9 years at NASA\u2019s Jet Propulsion Laboratory</li>
                   <li>• Worked on Curiosity Rover</li>
                   <li>• Founded CrunchLabs</li>
                   <li>• 23M+ YouTube Subscribers</li>
